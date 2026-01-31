@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Titilayo ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 0.6s ease;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 25px;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #ff4d6d;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    #no {
+      background: #eee;
+      color: #333;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>Hey Titilayo Hannah Ahisu 💖</h1>
+    <p>There’s something I’ve been wanting to tell you…</p>
+    <button onclick="nextStep()">Tap to continue ✨</button>
+  </div>
+
+  <script>
+    let step = 0;
+    const card = document.getElementById('card');
+
+    function nextStep() {
+      step++;
+
+      if (step === 1) {
+        card.innerHTML = `
+          <h1>Step 1 🌸</h1>
+          <p>
+            From the first moment I got to know you,<br/>
+            you stood out in a way I can’t explain.
+          </p>
+          <button onclick="nextStep()">Next 💕</button>
+        `;
+      }
+
+      else if (step === 2) {
+        card.innerHTML = `
+          <h1>Step 2 ✨</h1>
+          <p>
+            Your smile, your energy, your presence…<br/>
+            they make ordinary moments feel special.
+          </p>
+          <button onclick="nextStep()">Keep going 😌</button>
+        `;
+      }
+
+      else if (step === 3) {
+        card.innerHTML = `
+          <h1>Step 3 💭</h1>
+          <p>
+            I realized something important…<br/>
+            I really enjoy being around you.
+          </p>
+          <button onclick="nextStep()">One more 💖</button>
+        `;
+      }
+
+      else if (step === 4) {
+        card.innerHTML = `
+          <h1>The Question 💌</h1>
+          <p>
+            So I’ll ask you properly…<br/>
+            <strong>Titilayo Hannah Ahisu, will you go out with me?</strong>
+          </p>
+          <div class="buttons">
+            <button onclick="yesAnswer()">Yes 🥰</button>
+            <button id="no">No 🙃</button>
+          </div>
+        `;
+
+        const noBtn = document.getElementById('no');
+        noBtn.addEventListener('mouseover', () => {
+          const x = Math.random() * 200 - 100;
+          const y = Math.random() * 200 - 100;
+          noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+    }
+
+    function yesAnswer() {
+      document.body.innerHTML = `
+        <div style="text-align:center; color:white; font-family:Poppins, sans-serif; padding:40px;">
+          <h1>She said YES!!! 💕🎉</h1>
+          <p style="font-size:20px; margin-top:15px;">Titilayo, you just made my heart very happy 😍</p>
+          <p style="margin-top:20px;">Our love story just unlocked its first chapter ✨</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
